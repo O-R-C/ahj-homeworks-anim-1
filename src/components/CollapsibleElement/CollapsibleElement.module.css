@@ -1,0 +1,50 @@
+@value values: '@css/variables.module.css';
+@value colorMain, colorMainHover, colorSecondary, padding, radius, border, shadow from values;
+
+.collapsible-element {
+  max-width: 400px;
+  padding: padding;
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: padding;
+}
+
+.btn-collapse {
+  align-self: start;
+  background-color: colorMain;
+  color: white;
+  border: none;
+  border-radius: calc(radius / 2);
+  padding: padding;
+
+  font-size: inherit;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: colorMainHover;
+  }
+}
+
+.content-wrapper {
+  /* padding-top: padding; */
+  display: grid;
+  grid-template-rows: 0fr;
+
+  transition: all 0.3s ease-out;
+}
+
+.content-inner {
+  overflow: hidden;
+}
+
+.content {
+  border: border;
+  padding: padding;
+}
+
+.active {
+  grid-template-rows: 1fr;
+}
