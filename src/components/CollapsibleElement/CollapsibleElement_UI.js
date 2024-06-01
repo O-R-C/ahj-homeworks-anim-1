@@ -4,7 +4,15 @@ import { faker } from '@faker-js/faker'
 
 import styles from './CollapsibleElement.module.css'
 
+/**
+ * Class representing a collapsible element UI.
+ * @extends BaseUI
+ */
 export default class CollapsibleElement_UI extends BaseUI {
+  /**
+   * Creates the application element.
+   * @return {HTMLElement} The created app element.
+   */
   createApp() {
     const app = getElement({
       tag: 'div',
@@ -40,6 +48,9 @@ export default class CollapsibleElement_UI extends BaseUI {
     return app
   }
 
+  /**
+   * Toggles the collapsed state of the content wrapper.
+   */
   toggleCollapsed() {
     this.contentWrapper.classList.toggle(styles['active'])
   }
